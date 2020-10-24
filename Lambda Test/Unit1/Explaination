@@ -1,0 +1,60 @@
+Lambdas are basically assigning a function/action to a variable just like normal assignment. The function exists in isolation.
+
+Like this:
+ablockOfCode = void perform(){
+                    System.out.println("Hello World!);
+                }
+Now you can have other pieces of code excude this function that is stored inside the variable ablockOfCode to use this function
+just like how you would using a variable.
+
+-Since the lambda is just an action, public is an unnessary identifier.
+-Also the name "perform" of the function is unnessary, because when you access the function, you call it by the variable name:
+    -ex String name = "Edward";
+        System.out.println(name);
+-Lastly, the return type is not nessccsary since it the complier will know what it returns.
+
+
+in the end, the pesudo code looks like:
+ablockOfCode = (){
+                System.out.println("Hello world!");
+            }
+
+The real lambda syntax is (IN JAVA 8):
+ablockOfCode = () -> {
+                System.out.println("Hello World");
+            }
+
+If the Lambda is ONLY ONE LINE:
+ablock of Code = () -> System.out.println("Hello World!");
+
+
+
+
+
+
+//empty parameter:
+    //if its only one line, you can skip the brackets
+    //returns void
+    greetingFunction = () -> System.out.println("Hello World!");
+    //inline creation of lambda
+    greet(() -> System.out.println("Hello World!"));
+
+    //parameters:
+    //you can skip the return if its one line
+    //this just returns a * 2
+    doubleNumberFunction = (int a) -> a * 2;
+
+    //this just returns a + b
+    addFunction = (int a, int b) -> a + b;
+
+    //more than one line function:
+    //returns 0 if divide by 0, otherwise, integer  divides a/b.
+    safeDivideFunction = (int a, int b) -> {
+        if (b == 0){
+            return 0;
+        }
+        return a/b;
+    };
+
+    //returns the length of a string
+    stringLengthCountFunction = (String a) -> s.length();
